@@ -1,5 +1,5 @@
 defmodule Procore.HttpClient do
-  use Tesla, only: [:post, :get, :patch]
+  use Tesla, only: [:post, :get, :patch, :delete]
 
   adapter(
     Tesla.Adapter.Hackney,

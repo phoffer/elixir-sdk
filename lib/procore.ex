@@ -86,6 +86,14 @@ defmodule Procore do
   end
 
   @doc """
+  Makes a DELETE request.
+  """
+  def send_request(%Request{request_type: :delete, endpoint: endpoint, body: body}, client)
+      when byte_size(endpoint) > 0 do
+    http_client().delete(client, endpoint)
+  end
+
+  @doc """
   Raises an error if no request type is set.
   """
   def send_request(%Request{request_type: :unset}) do
