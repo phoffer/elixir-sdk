@@ -48,7 +48,7 @@ defmodule Procore.Resources.BudgetLineItemsTest do
       }
     }
 
-    assert %ResponseResult{reply: :ok, status_code: 201, parsed_body: %{}} =
-             BudgetLineItems.create(client, params)
+    assert %ResponseResult{reply: :ok, status_code: 200, parsed_body: %{}} =
+             BudgetLineItems.update(client, params)
   end
 end
