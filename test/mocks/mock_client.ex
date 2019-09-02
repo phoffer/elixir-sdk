@@ -279,6 +279,14 @@ defmodule HttpClient.MockClient do
     %ResponseResult{status_code: 200, parsed_body: [], reply: :ok}
   end
 
+  def get(_, "/vapid/companies/1/managed_equipment_types", _) do
+    %ResponseResult{status_code: 200, parsed_body: [], reply: :ok}
+  end
+
+  def get(_, "/vapid/companies/1/managed_equipment_types/1", _) do
+    %ResponseResult{status_code: 200, parsed_body: [], reply: :ok}
+  end
+
   @spec post(String.t(), any, any, any) :: %ResponseResult{}
 
   def post(_, "/vapid/companies/1/contributing_behaviors", _, _) do
@@ -429,6 +437,10 @@ defmodule HttpClient.MockClient do
     %ResponseResult{status_code: 201, parsed_body: %{}, reply: :ok}
   end
 
+  def post(_, "/vapid/companies/1/managed_equipment_types", _, _) do
+    %ResponseResult{status_code: 201, parsed_body: %{}, reply: :ok}
+  end
+
   @spec patch(String.t(), any, any) :: %ResponseResult{}
 
   def patch(_, "/vapid/line_item_types/sync", _) do
@@ -468,6 +480,10 @@ defmodule HttpClient.MockClient do
   end
 
   def patch(_, "/vapid/companies/1/managed_equipment_makes/1", _) do
+    %ResponseResult{status_code: 200, parsed_body: %{}, reply: :ok}
+  end
+
+  def patch(_, "/vapid/companies/1/managed_equipment_types/1", _) do
     %ResponseResult{status_code: 200, parsed_body: %{}, reply: :ok}
   end
 
